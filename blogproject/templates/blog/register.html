@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block main %}
+    <form action="{% url 'comments:doregister' %}" method="get" class="comment-form">
+                    {% csrf_token %}
+                                姓名：<input type="text" name="name" placeholder="请输入用户名">
+                                密码：<input type="password" name="password">
+{#                                手机：<input type="text" name="phone" id="phone">#}
+
+                                验证码： <input type="text" name="yzm"> <img src="{% url 'comments:yzm' %}" onclick="this.src='{% url 'comments:yzm' %}?'+Math.random()"><br>
+
+
+                                <button type="submit" class="comment-btn">注册</button>
+
+                                                <!-- row -->
+                    </form>
+{% endblock main %}
+{#{% block end %}#}
+{#    <script>#}
+{#    var time = 3#}
+{#    var timer //定时器#}
+{#    $("#yzm").click(function(){#}
+{#        console.log("start")#}
+{#        var _this = this  //获取当前的按钮对象#}
+{#        this.disabled = true  //禁止点击#}
+{#        timer = setInterval(function(){#}
+{#            time--#}
+{#            _this.value = '' + time + "后再获取"#}
+{#            if (time < 1){#}
+{#                _this.disabled = false#}
+{#                _this.value = '获取验证码'#}
+{#                console.log('111')#}
+{#                clearInterval(timer)#}
+{#                timer = null#}
+{#            }#}
+{#console.log('end')#}
+{#        },1000)#}
+{##}
+{#         value  = $("#phone").val()#}
+{#        // 通知后台给手机#}
+{##}
+{#        $.get('/comments/send/',{'phone':value},function(data){#}
+{#            console.log(data)#}
+{#        },'json')#}
+{##}
+{#    })#}
+{##}
+{#</script>#}
+{#{% endblock end %}#}

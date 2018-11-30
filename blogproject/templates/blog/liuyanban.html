@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block main %}
+    <form action="{% url 'comments:doliuyan' %}" method="get" class="comment-form">
+<p>
+    纵使你心里有千般后悔，没有传达给对方就毫无意义——日瓦戈
+</p>
+    <textarea rows="10" cols="30" name="text">
+</textarea>
+        <button type="submit" class="comment-btn">提交</button>
+    {{ username }}<br>
+    <li>{{ text }}</li>
+    </form>
+{% endblock main %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block main %}
+<form action="{% url 'comments:dolog' %}" method="post" class="comment-form">
+                    {% csrf_token %}
+                        <div class="row">
+                        <div class="col-md-4">
+                             姓名：<input type="text" name="name" placeholder="请输入用户名">
+                         </div>
+
+                            <div class="col-md-4">
+                             密码：<input type="password" name="password">
+                                                    </div>
+
+                        </div>
+    <div class="col-mad-4">
+                                <button type="submit" class="comment-btn">登录</button>
+                            </div><!-- row -->
+                    </form>
+
+{% endblock %}
